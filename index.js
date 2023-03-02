@@ -3,6 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const authRouter = require('./routes/auth.routes');
+const messageRouter = require('./routes/message.routes');
 
 // create app
 const port = process.env.PORT || 5000;
@@ -15,6 +16,7 @@ app.use(cors({}));
 
 // routes
 app.use('/auth', authRouter);
+app.use('/message', messageRouter);
 
 app.get('/', (req, res) => {
     res.send('crispy backend');
